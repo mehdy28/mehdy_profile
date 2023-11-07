@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exploratory Data Analysis on Mehdi</title>
+    <link>https://mehdy28.github.io/mehdy_profile/tags/exploratory-data-analysis/</link>
+    <description>Recent content in Exploratory Data Analysis on Mehdi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Aug 2023 23:29:21 +0530</lastBuildDate><atom:link href="https://mehdy28.github.io/mehdy_profile/tags/exploratory-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Review Classification</title>
+      <link>https://mehdy28.github.io/mehdy_profile/blogs/review_classification/</link>
+      <pubDate>Fri, 04 Aug 2023 23:29:21 +0530</pubDate>
+      
+      <guid>https://mehdy28.github.io/mehdy_profile/blogs/review_classification/</guid>
+      <description>Introduction Lights, camera, sentiment analysis! In this captivating project, we&amp;rsquo;re diving into the world of movies and emotions, exploring how machine learning techniques can help us decipher the sentiment hidden within movie reviews. So grab your popcorn, and let&amp;rsquo;s embark on a journey through data, analysis, and a touch of AI magic.
+Loading the Movie Review Dataset Our cinematic journey begins by obtaining the movie review dataset. Using the Kaggle API, we effortlessly download the dataset and prepare for our analysis.</description>
+    </item>
+    
+  </channel>
+</rss>

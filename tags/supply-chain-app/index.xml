@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Supply Chain App on Mehdi</title>
+    <link>https://mehdy28.github.io/mehdy_profile/tags/supply-chain-app/</link>
+    <description>Recent content in Supply Chain App on Mehdi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Aug 2023 23:29:21 +0530</lastBuildDate><atom:link href="https://mehdy28.github.io/mehdy_profile/tags/supply-chain-app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Supply Chain Management APP: Part 1</title>
+      <link>https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/</link>
+      <pubDate>Thu, 10 Aug 2023 23:29:21 +0530</pubDate>
+      
+      <guid>https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/</guid>
+      <description>Introduction Welcome to the first part of our comprehensive series on creating a powerful Supply Chain Management App! In this article, we will dive into the exciting world of data analysis and dashboard creation, setting the stage for an app that will enhance the supply chain optimization. As a budding developer, you&amp;rsquo;re about to embark on a transformative journey that will not only enhance your skills but also contribute significantly to the world of logistics and operations.</description>
+    </item>
+    
+  </channel>
+</rss>

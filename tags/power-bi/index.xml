@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Power BI on Mehdi</title>
+    <link>https://mehdy28.github.io/mehdy_profile/tags/power-bi/</link>
+    <description>Recent content in Power BI on Mehdi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Oct 2023 23:29:21 +0530</lastBuildDate><atom:link href="https://mehdy28.github.io/mehdy_profile/tags/power-bi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Freight and Logistics Analytics: Empowering Decisions with Power BI</title>
+      <link>https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/</link>
+      <pubDate>Wed, 04 Oct 2023 23:29:21 +0530</pubDate>
+      
+      <guid>https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/</guid>
+      <description>In a rapidly evolving world driven by data, the ability to transform intricate datasets into meaningful insights is a skill in high demand. This article introduces a Power BI project that offers a comprehensive exploration of data analytics, highlighting not only the capabilities of Power BI but also the art of interpreting and presenting complex data. Within these pages, we will embark on a journey through the project&amp;rsquo;s objectives, critical measures, and impactful visualizations, all designed to empower decision-makers in the transportation industry.</description>
+    </item>
+    
+    <item>
+      <title>Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance</title>
+      <link>https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/</link>
+      <pubDate>Wed, 04 Oct 2023 23:29:21 +0530</pubDate>
+      
+      <guid>https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/</guid>
+      <description>In an increasingly data-driven world, the ability to analyze and visualize complex datasets is a skill of great value. In this article, I present my Power BI project, which focuses on analyzing sales performance, returns, and customer behavior. This project not only demonstrates my proficiency in Power BI but also showcases my data analysis and visualization skills.
+Project Overview Power BI Dashboard Main Page The main page serves as the central hub of the dashboard.</description>
+    </item>
+    
+  </channel>
+</rss>

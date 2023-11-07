@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=https://mehdy28.github.io/mehdy_profile/DemHigh.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/font.css" media="all">
+
+
+
+<meta property="og:title" content="Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance" />
+<meta property="og:description" content="In an increasingly data-driven world, the ability to analyze and visualize complex datasets is a skill of great value. In this article, I present my Power BI project, which focuses on analyzing sales performance, returns, and customer behavior. This project not only demonstrates my proficiency in Power BI but also showcases my data analysis and visualization skills.
+Project Overview Power BI Dashboard Main Page The main page serves as the central hub of the dashboard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2023-10-04T23:29:21+05:30" />
+<meta property="article:modified_time" content="2023-10-04T23:29:21+05:30" /><meta property="og:site_name" content="Portfolio" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance"/>
+<meta name="twitter:description" content="In an increasingly data-driven world, the ability to analyze and visualize complex datasets is a skill of great value. In this article, I present my Power BI project, which focuses on analyzing sales performance, returns, and customer behavior. This project not only demonstrates my proficiency in Power BI but also showcases my data analysis and visualization skills.
+Project Overview Power BI Dashboard Main Page The main page serves as the central hub of the dashboard."/>
+
+
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/header.css" media="all">
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/theme.css" media="all">
+
+
+
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        width: .5em;
+        height: .5em;
+        background-color: var(--background-color);
+    }
+    
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px var(--background-color);
+        border-radius: 1rem;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: var(--secondary-color);
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+<meta name="description" content="">
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/single.css">
+
+
+<script defer src="https://mehdy28.github.io/mehdy_profile/fontawesome-5/all-5.15.4.js"></script>
+
+  <title>
+Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance | Mehdi
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+<header>
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="https://mehdy28.github.io/mehdy_profile/">
+                
+                <img src="https://mehdy28.github.io/mehdy_profile/DemHigh.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Portfolio
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#about" aria-label="about">
+                            About Me
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#experience"
+                            aria-label="experience">
+                            Experience
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#education"
+                            aria-label="education">
+                            Education
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#projects"
+                            aria-label="projects">
+                            Projects
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#contact"
+                            aria-label="contact">
+                            Contact
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/blogs" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance</h1>
+            <div class="text-center">
+              Dem High 
+              <small>|</small>
+              Oct 4, 2023
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid" src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/Cover.png" alt="Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance">
+          </div>
+          
+          <article class="page-content  p-2">
+          <p>In an increasingly data-driven world, the ability to analyze and visualize complex datasets is a skill of great value. In this article, I present my Power BI project, which focuses on analyzing sales performance, returns, and customer behavior. This project not only demonstrates my proficiency in Power BI but also showcases my data analysis and visualization skills.</p>
+<h2 id="project-overview">Project Overview</h2>
+<h3 id="power-bi-dashboard">Power BI Dashboard</h3>
+<h4 id="main-page">Main Page</h4>
+<p>The main page serves as the central hub of the dashboard. It offers a user-friendly interface that allows users to access different sections of the project. Key features include:</p>
+<p>Buttons: These buttons lead to different sections of the dashboard: &ldquo;Transaction Details&rdquo; and &ldquo;Returns.&rdquo;
+Metrics: This section presents important metrics, including ordered quantity, total net sales, and total gross profit.
+Slider: Users can select a date range to filter the data dynamically.</p>
+<div style="text-align: center;">
+  <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/1.png" alt="Alt Text">
+</div>
+<br>
+<h4 id="transaction-page">Transaction Page</h4>
+<p>The transaction page delves into the details of sales performance. Users can explore the following features:</p>
+<p>Metrics: These metrics provide insights into various aspects of transactions, including total transactions, quantity, net sales, gross profit margin, and the number of products.
+Graphs: Users can visualize data through graphs, such as transactions by customer ranking and transactions by different time intervals (month, quarter, year, or day).</p>
+<div style="text-align: center;">
+  <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/2.png" alt="Alt Text">
+</div>
+<br>
+<h4 id="qty-ordered-page">Qty Ordered Page</h4>
+<p>This page focuses on the quantity of products ordered. It includes:</p>
+<p>Metrics: Metrics display important information related to quantity ordered, net sales, gross profit margin, and the number of products.
+Graphs: Users can explore data through graphs, including quantity by customer ranking and quantity by different time intervals.</p>
+<div style="text-align: center;">
+  <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/3.png" alt="Alt Text">
+</div>
+<br>
+<h4 id="net-sales-page">Net Sales Page</h4>
+<p>The net sales page helps users understand revenue generated after considering discounts and refunds. Features include:</p>
+<p>Metrics: Metrics show net sales, quantity, gross profit margin, and the number of products.
+Graphs: Users can visualize data through graphs like net sales by customer ranking and net sales by different time intervals.</p>
+<div style="text-align: center;">
+  <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/4.png" alt="Alt Text">
+</div>
+<br>
+<h4 id="returns-page">Returns Page</h4>
+<p>The returns page focuses on analyzing product returns. Key features include:</p>
+<p>Metrics: Metrics display information related to the quantity returned, total refund, and the refund rate.
+Graphs: Users can explore data through graphs showing returns by month, refund vs. gross revenue by day, and identifying total products with the highest return rates.</p>
+<div style="text-align: center;">
+  <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/5.png" alt="Alt Text">
+</div>
+<br>
+<h3 id="data-sources">Data Sources</h3>
+<p>I used a variety of data sources for this project, including:</p>
+<p><strong>Dim_Customers</strong> and <strong>Dim_Products</strong>: These tables provided information about customers and products, forming the basis for our analysis.
+<strong>FactTable_Transactions</strong>: Containing data related to product transactions, including order quantities and prices.
+<strong>FactTable_Returns</strong>: Providing information about product returns, including quantities and return values.
+<strong>fact_product_cost</strong></p>
+<h3 id="key-metrics-and-measures">Key Metrics and Measures</h3>
+<p>I defined several key measures to analyze the data effectively:</p>
+<p>#Customers: A simple count of unique customers in the dataset.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">#Customers = COUNTROWS(Dim_Customers)
+</code></pre><p>#Products: The count of distinct products, helping us understand the product portfolio.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">#Products = DISTINCTCOUNT(Dim_Products[ProductKey])
+</code></pre><p>% Refund Rate: Calculated as the ratio of total refunds to gross revenue, providing insights into the impact of refunds on sales.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">% Refund Rate = DIVIDE([Total_Refund] , [Gross_Revenue] , 0)
+</code></pre><p>COGS (Cost of Goods Sold): Determined by multiplying the product cost by the order quantity, representing the cost associated with sales.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">COGS = SUMX(FactTable_Transactions, FactTable_Transactions[Product Cost] * FactTable_Transactions[OrderQuantity])
+</code></pre><p>Gross Profit Margin: Calculated as net sales minus COGS, providing a measure of profit.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Gross Profit Margin = [Net_Sales] - [COGS]
+</code></pre><p>Gross Revenue: Calculated as the sum of order quantities multiplied by unit prices, indicating total revenue generated.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Gross_Revenue = SUMX(FactTable_Transactions, FactTable_Transactions[OrderQuantity] * FactTable_Transactions[UnitPrice])
+</code></pre><p>Net Sales: Gross revenue minus total discounts and total refunds, offering insights into actual sales.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Net_Sales = [Gross_Revenue] - [Total_Discount] - [Total_Refund]
+</code></pre><p>QTY (Quantity Ordered): The sum of order quantities, showing the total items ordered.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">QTY = SUM(FactTable_Transactions[OrderQuantity])
+</code></pre><p>Quantity Returned: The sum of return quantities, helping analyze the extent of returns.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Quantity Returned = SUM(FactTable_Returns[ReturnQuantity])
+</code></pre><p>Ranking By Customer: A ranking measure to identify top customers with the highest returns based on user selection.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Ranking By Customer = 
+VAR Rank_Customer = RANKX(ALL(Dim_Customers[Customer]), [Quantity Returned],, DESC)
+VAR Result = IF(Rank_Customer &lt;= SelectRancing[SelectRancing Value], [Quantity Returned])
+RETURN Result
+</code></pre><p>Ranking By Product: A ranking measure to identify top products with the highest returns based on user selection.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Ranking By Product = 
+VAR Rank_Product = RANKX(ALL(Dim_Products[ProductName]), [Quantity Returned],, DESC)
+VAR Result = IF(Rank_Product &lt;= SelectRancing[SelectRancing Value], [Quantity Returned])
+RETURN Result
+</code></pre><p>Title Customer: Dynamic titles for top customers based on user selection.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Title Customer = 
+VAR Selected_TopN = SELECTEDVALUE(SelectRancing[SelectRancing])
+VAR Result = &#34;Top-&#34; &amp; Selected_TopN &amp; &#34; Customers with highest Return&#34;
+RETURN Result```
+Title Product: Dynamic titles for top products based on user selection.
+```DAX
+Title Product = 
+VAR Selected_TopN = SELECTEDVALUE(SelectRancing[SelectRancing])
+VAR Result = &#34;Top-&#34; &amp; Selected_TopN &amp; &#34; Products with highest Return&#34;
+RETURN Result
+</code></pre><p>Total_Discount: The sum of extended amounts multiplied by discount percentages, providing insights into the total discounts applied.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Total_Discount = SUMX(FactTable_Transactions, FactTable_Transactions[ExtendedAmount] * FactTable_Transactions[% Discount])
+</code></pre><p>Total_Refund: The sum of return quantities multiplied by unit prices, indicating the total refund amount.</p>
+<pre tabindex="0"><code class="language-DAX" data-lang="DAX">Total_Refund = SUMX(FactTable_Returns, FactTable_Returns[ReturnQuantity] * FactTable_Returns[UnitPrice])
+</code></pre><h2 id="conclusion">Conclusion</h2>
+<p>In a data-driven world where information is a valuable currency, the ability to analyze and visualize complex datasets is paramount. This Power BI project has not only showcased the potential of Power BI as a robust tool for data analysis and visualization but has also demonstrated the power of data to uncover insights into sales performance, returns, and customer behavior.</p>
+<p>With a user-friendly interface and a rich set of metrics and visualizations, this Power BI dashboard empowers users to gain a deep understanding of their data. From the central hub to detailed transaction pages, quantity ordered insights, net sales analysis, and returns examination, this project covers a wide spectrum of critical business aspects.</p>
+<p>Behind the scenes, we&rsquo;ve harnessed the capabilities of DAX (Data Analysis Expressions) to define key metrics and measures, allowing for in-depth data exploration. These measures provide a unique perspective on customer behavior, product performance, and the financial aspects of the business.</p>
+<p>The project&rsquo;s reliance on various data sources, such as customer and product tables, transaction data, and return information, underscores the importance of reliable and well-structured data in driving insightful analysis.</p>
+<p>In conclusion, this Power BI project not only highlights the prowess of data analytics but also the potential it holds for businesses seeking to make informed decisions. By merging the art of data visualization with the science of data analysis, we open doors to endless opportunities for improving sales, understanding customer needs, and optimizing returns. This project serves as a testament to the transformative power of data in today&rsquo;s business landscape.</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-overview">Project Overview</a>
+      <ul>
+        <li><a href="#power-bi-dashboard">Power BI Dashboard</a></li>
+        <li><a href="#data-sources">Data Sources</a></li>
+        <li><a href="#key-metrics-and-measures">Key Metrics and Measures</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/power-bi" target="_blank">Power BI</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/data-analysis" target="_blank">Data Analysis</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/data-visualization" target="_blank">Data Visualization</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/sales-performance" target="_blank">Sales Performance</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/customer-behavior" target="_blank">Customer Behavior</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/returns-analysis" target="_blank">Returns Analysis</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/data-sources" target="_blank">Data Sources</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/key-metrics" target="_blank">Key Metrics</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/measures" target="_blank">Measures</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/dax" target="_blank">DAX</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/user-interface-design" target="_blank">User Interface Design</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Power%20BI%20Dashboard%3a%20Analyzing%20Sales%2c%20Returns%2c%20and%20Customer%20Performance&url=https%3a%2f%2fmehdy28.github.io%2fmehdy_profile%2fblogs%2fpowerbi_project_1%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Power%20BI%20Dashboard%3a%20Analyzing%20Sales%2c%20Returns%2c%20and%20Customer%20Performance: https%3a%2f%2fmehdy28.github.io%2fmehdy_profile%2fblogs%2fpowerbi_project_1%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Power%20BI%20Dashboard%3a%20Analyzing%20Sales%2c%20Returns%2c%20and%20Customer%20Performance&amp;body=Check%20out%20this%20site https%3a%2f%2fmehdy28.github.io%2fmehdy_profile%2fblogs%2fpowerbi_project_1%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="https://mehdy28.github.io/mehdy_profile/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+<script src="https://mehdy28.github.io/mehdy_profile/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    <div class="container py-3" id="recent-posts">
+    
+    
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/SQL_Pr1/cover.png" class="card-img-top" alt="Exploring Telangana&#39;s District Data: A SQL Analysis">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Exploring Telangana&#39;s District Data: A SQL Analysis">Exploring Telangana&#39;s …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>In this project , we delve into the world of data and databases to analyze various aspects of Telangana&rsquo;s districts. Our dataset comprises information from multiple tables related to revenue, vehicle sales, and industrial sectors in Telangana. We will conduct SQL queries to extract meaningful …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr2/Cover.png" class="card-img-top" alt="Freight and Logistics Analytics: Empowering Decisions with Power BI">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Freight and Logistics Analytics: Empowering Decisions with Power BI">Freight and Logistics …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>In a rapidly evolving world driven by data, the ability to transform intricate datasets into meaningful insights is a skill in high demand. This article introduces a Power BI project that offers a comprehensive exploration of data analytics, highlighting not only the capabilities of Power BI but …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/Cover.png" class="card-img-top" alt="Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance">Power BI Dashboard: …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>In an increasingly data-driven world, the ability to analyze and visualize complex datasets is a skill of great value. In this article, I present my Power BI project, which focuses on analyzing sales performance, returns, and customer behavior. This project not only demonstrates my proficiency in …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Supply_Chain_Management_APP_Part%20_2/Data_Base.png" class="card-img-top" alt="Supply Chain Management APP: Part 2">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Supply Chain Management APP: Part 2">Supply Chain Management …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Welcome to Part 2 of our comprehensive series on creating a powerful Supply Chain Management App! In this exciting installment of our series, we continue our journey into the dynamic world of supply chain optimization. In Part 1, we delved into the realm of data analysis and dashboard creation, …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 12, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Supply_Chain_Management_APP_Part%20_1/Supply_Chain.png" class="card-img-top" alt="Supply Chain Management APP: Part 1">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Supply Chain Management APP: Part 1">Supply Chain Management …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Introduction Welcome to the first part of our comprehensive series on creating a powerful Supply Chain Management App! In this article, we will dive into the exciting world of data analysis and dashboard creation, setting the stage for an app that will enhance the supply chain optimization. As a …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 10, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/review_classification/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Review_Classification/Classif.png" class="card-img-top" alt="Review Classification">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/review_classification/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Review Classification">Review Classification</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Introduction Lights, camera, sentiment analysis! In this captivating project, we&rsquo;re diving into the world of movies and emotions, exploring how machine learning techniques can help us decipher the sentiment hidden within movie reviews. So grab your popcorn, and let&rsquo;s embark on a journey …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/review_classification/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div><div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/mehdy28" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/mehdi-bhiri-20096a257/" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+    <a href="https://www.facebook.com/profile.php?id=100001214131066" aria-label="facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <path fill="#3F51B5"
+                d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+            <path fill="#FFF"
+                d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z" />
+        </svg>
+    </a>
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <div class="pb-2">
+                <a href="https://mehdy28.github.io/mehdy_profile/" title="Mehdi">
+                    <img alt="Footer logo" src="https://mehdy28.github.io/mehdy_profile/DemHigh.png"
+                        height="40px" width="40px">
+                </a>
+            </div>
+            &copy; 2023  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div></footer><script src="https://mehdy28.github.io/mehdy_profile/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="https://mehdy28.github.io/mehdy_profile/js/search.js"></script>
+
+
+
+
+
+
+
+
+<script src="https://mehdy28.github.io/mehdy_profile/js/contact.js"></script>
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

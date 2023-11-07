@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Economic Analysis on Mehdi</title>
+    <link>https://mehdy28.github.io/mehdy_profile/tags/economic-analysis/</link>
+    <description>Recent content in Economic Analysis on Mehdi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Oct 2023 23:29:21 +0530</lastBuildDate><atom:link href="https://mehdy28.github.io/mehdy_profile/tags/economic-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Telangana&#39;s District Data: A SQL Analysis</title>
+      <link>https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/</link>
+      <pubDate>Wed, 04 Oct 2023 23:29:21 +0530</pubDate>
+      
+      <guid>https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/</guid>
+      <description>In this project , we delve into the world of data and databases to analyze various aspects of Telangana&amp;rsquo;s districts. Our dataset comprises information from multiple tables related to revenue, vehicle sales, and industrial sectors in Telangana. We will conduct SQL queries to extract meaningful insights and provide suitable analysis for each result.
+Database Structure Our database consists of the following tables:
+Date: Contains information about months, quarters, and fiscal years.</description>
+    </item>
+    
+  </channel>
+</rss>

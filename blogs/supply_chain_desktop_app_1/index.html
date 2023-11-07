@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=https://mehdy28.github.io/mehdy_profile/DemHigh.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/font.css" media="all">
+
+
+
+<meta property="og:title" content="Supply Chain Management APP: Part 1" />
+<meta property="og:description" content="Introduction Welcome to the first part of our comprehensive series on creating a powerful Supply Chain Management App! In this article, we will dive into the exciting world of data analysis and dashboard creation, setting the stage for an app that will enhance the supply chain optimization. As a budding developer, you&rsquo;re about to embark on a transformative journey that will not only enhance your skills but also contribute significantly to the world of logistics and operations." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2023-08-10T23:29:21+05:30" />
+<meta property="article:modified_time" content="2023-08-10T23:29:21+05:30" /><meta property="og:site_name" content="Portfolio" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Supply Chain Management APP: Part 1"/>
+<meta name="twitter:description" content="Introduction Welcome to the first part of our comprehensive series on creating a powerful Supply Chain Management App! In this article, we will dive into the exciting world of data analysis and dashboard creation, setting the stage for an app that will enhance the supply chain optimization. As a budding developer, you&rsquo;re about to embark on a transformative journey that will not only enhance your skills but also contribute significantly to the world of logistics and operations."/>
+
+
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/header.css" media="all">
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/theme.css" media="all">
+
+
+
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        width: .5em;
+        height: .5em;
+        background-color: var(--background-color);
+    }
+    
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px var(--background-color);
+        border-radius: 1rem;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: var(--secondary-color);
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+<meta name="description" content="">
+<link rel="stylesheet" href="https://mehdy28.github.io/mehdy_profile/css/single.css">
+
+
+<script defer src="https://mehdy28.github.io/mehdy_profile/fontawesome-5/all-5.15.4.js"></script>
+
+  <title>
+Supply Chain Management APP: Part 1 | Mehdi
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+<header>
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="https://mehdy28.github.io/mehdy_profile/">
+                
+                <img src="https://mehdy28.github.io/mehdy_profile/DemHigh.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Portfolio
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#about" aria-label="about">
+                            About Me
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#experience"
+                            aria-label="experience">
+                            Experience
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#education"
+                            aria-label="education">
+                            Education
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#projects"
+                            aria-label="projects">
+                            Projects
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/#contact"
+                            aria-label="contact">
+                            Contact
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="https://mehdy28.github.io/mehdy_profile/blogs" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Supply Chain Management APP: Part 1</h1>
+            <div class="text-center">
+              Dem High 
+              <small>|</small>
+              Aug 10, 2023
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid" src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Supply_Chain_Management_APP_Part%20_1/Supply_Chain.png" alt="Supply Chain Management APP: Part 1">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="introduction">Introduction</h2>
+<p>Welcome to the first part of our comprehensive series on creating a powerful Supply Chain Management App! <br>
+In this article, we will dive into the exciting world of data analysis and dashboard creation, setting the stage for an app that will enhance the supply chain optimization. <br>
+As a budding developer, you&rsquo;re about to embark on a transformative journey that will not only enhance your skills but also contribute significantly to the world of logistics and operations.
+<br>
+So, let&rsquo;s roll up our sleeves and get started!</p>
+<h2 id="setting-the-foundation-for-your-supply-chain-app">Setting the Foundation for Your Supply Chain App</h2>
+<p>Our ambitious project aims to create a supply chain management desktop app that will streamline logistics processes,  and boost customer satisfaction. The journey ahead encompasses multiple crucial phases: Exploratory Data Analysis (EDA), database development, app creation, and more&hellip; <br>
+In this inaugural part of our series, we&rsquo;ll delve into the EDA phase, where you&rsquo;ll harness the power of real-world data to extract invaluable insights. These insights will lay the groundwork for an intuitive and effective dashboard, which will be the cornerstone of your app&rsquo;s success.</p>
+<h2 id="understanding-the-data-navigating-your-dataset">Understanding the Data: Navigating Your Dataset</h2>
+<p>Before we dive into the fascinating realm of data analysis, let&rsquo;s take a closer look at the dataset that will fuel your app&rsquo;s functionality. The dataset you&rsquo;ll be working with is a goldmine of information, containing details about customers, product orders, delivery dates, and much more. This data will serve as the raw material from which you&rsquo;ll craft a seamless user experience within your app.<br>
+Challenge #2 : Generate Insights to Solve a Supply Chain Issue in the FMCG domain.<br>
+Download Problem Files: <br>
+<a href="https://codebasics.io/challenge/codebasics-resume-project-challenge">https://codebasics.io/challenge/codebasics-resume-project-challenge</a></p>
+<h2 id="cleaning-and-preprocessing-a-prerequisite-for-analysis">Cleaning and Preprocessing: A Prerequisite for Analysis</h2>
+<p>First things first, let&rsquo;s ensure the integrity of your data. Cleaning and preprocessing are essential steps to guarantee accuracy and reliability. This involves tasks like removing duplicates, handling missing values, and converting data types. Your dataset comprises a wealth of customer information, product records, order specifics, and delivery performance statistics.<br>
+We will not cover this part for the length of the article and the quality of our data that was in a good state and clean. <br>
+Please refer to this repo for more code : <a href="https://github.com/mehdy28/Supply_Chain_Desktop_App_1">https://github.com/mehdy28/Supply_Chain_Desktop_App_1</a></p>
+<h2 id="visualizing-product-categories-unveiling-insights">Visualizing Product Categories: Unveiling Insights</h2>
+<p>A great starting point for your EDA journey is to visualize the distribution of products across various categories. By doing so, you can uncover trends that will shape your app&rsquo;s design and features. Python&rsquo;s powerful data visualization libraries, such as Matplotlib and Seaborn, will be your allies in creating informative bar charts showcasing product distribution within each category.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Sample Python code snippet for visualizing product categories</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a bar plot of product categories</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;product_category&#39;</span>, data<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Product Distribution by Category&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><h2 id="uncovering-key-insights-embarking-on-exploratory-data-analysis">Uncovering Key Insights: Embarking on Exploratory Data Analysis</h2>
+<p>With your data polished and ready, it&rsquo;s time to embark on your EDA journey. The goal? Extracting insights that will guide your app&rsquo;s development and enhance its effectiveness. Let&rsquo;s delve into some essential aspects of EDA that will steer your project in the right direction.</p>
+<h3 id="customer-analysis-deciphering-customer-behavior">Customer Analysis: Deciphering Customer Behavior</h3>
+<p>To offer tailor-made solutions and impeccable service, you need to understand your customers inside out. Analyzing customer data will unveil ordering patterns, delivery preferences, and overall satisfaction levels. Visualizing metrics like on-time delivery rates, in-full delivery rates, and OTIF (On Time In Full) percentages will provide a comprehensive snapshot of customer behavior.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Sample Python code snippet for customer analysis visualization</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>histplot(data[<span style="color:#e6db74">&#39;on_time_delivery&#39;</span>], bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, kde<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Distribution of On-Time Delivery Rates&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;On-Time Delivery Rate&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Frequency&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><h3 id="product-analysis-spotting-high-performers">Product Analysis: Spotting High Performers</h3>
+<p>Products are the backbone of the supply chain, and analyzing their performance can drive data-backed decisions. Metrics like line fill rates and volume fill rates are your compass for assessing product ordering and delivery efficiency. Identifying top-performing products can fine-tune inventory management and ensure swift response to customer demands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Sample Python code snippet for product analysis visualization</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>boxplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;line_fill_rate&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;product_category&#39;</span>, data<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Line Fill Rates by Product Category&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Line Fill Rate&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Product Category&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><h3 id="delivery-performance-tracking-punctuality-and-precision">Delivery Performance: Tracking Punctuality and Precision</h3>
+<p>At the heart of seamless supply chain management lies punctual and precise deliveries. Scrutinizing delivery metrics such as on-time delivery percentages and in-full delivery percentages exposes areas ripe for enhancement. Crafting visualizations that track these metrics over time unveils trends and guides proactive measures.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Sample Python code snippet for delivery performance visualization</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;order_date&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;on_time_delivery&#39;</span>, data<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;order_date&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;in_full_delivery&#39;</span>, data<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Delivery Performance Over Time&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Order Date&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Percentage&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend([<span style="color:#e6db74">&#39;On-Time Delivery&#39;</span>, <span style="color:#e6db74">&#39;In-Full Delivery&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><h2 id="building-your-dashboard-from-insights-to-action">Building Your Dashboard: From Insights to Action</h2>
+<p>With insights gleaned from EDA, it&rsquo;s time to transform data into a dynamic dashboard that empowers businesses to make informed choices. A well-crafted dashboard offers a visual panorama of KPIs, trends, and performance metrics, equipping users to swiftly grasp critical information.</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Metric</th>
+<th>Abbreviation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Total Order Lines</td>
+<td></td>
+<td>Count of all order lines in the fact_orders table</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Line Fill Rate</td>
+<td>LIFR %</td>
+<td>Number of order lines shipped In Full Quantity / Total Order Lines</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Volume Fill Rate</td>
+<td>VOFR %</td>
+<td>Total Quantity shipped / Total Quantity Ordered</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Total Orders</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>On Time Delivery %</td>
+<td>OT %</td>
+<td>Number of orders delivered On Time / Total Number of Orders</td>
+</tr>
+<tr>
+<td>6</td>
+<td>In Full Delivery %</td>
+<td>IF %</td>
+<td>Number of orders delivered in Full quantity / Total Number of Orders</td>
+</tr>
+<tr>
+<td>7</td>
+<td>On Time In Full %</td>
+<td>OTIF %</td>
+<td>Number of orders delivered both IN Full &amp; On Time / Total Number of Orders</td>
+</tr>
+<tr>
+<td>8</td>
+<td>On Time Target</td>
+<td></td>
+<td>Average of On-Time Target</td>
+</tr>
+<tr>
+<td>9</td>
+<td>In Full Target</td>
+<td></td>
+<td>Average of In-Full Target</td>
+</tr>
+<tr>
+<td>10</td>
+<td>On Time In Full Target</td>
+<td></td>
+<td>Average of OTIF Target</td>
+</tr>
+</tbody>
+</table>
+<p>This is an example of code on how we can achieve these KPIs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 1. Total Order Lines</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_order_lines</span>(order_lines_df):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> len(order_lines_df)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Line Fill Rate (LIFR %)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">line_fill_rate</span>(order_lines_df):
+</span></span><span style="display:flex;"><span>    in_full_lines <span style="color:#f92672">=</span> order_lines_df[<span style="color:#e6db74">&#39;In Full&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    total_lines <span style="color:#f92672">=</span> total_order_lines(order_lines_df)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> total_lines <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (in_full_lines <span style="color:#f92672">/</span> total_lines) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Volume Fill Rate (VOFR %)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">volume_fill_rate</span>(order_lines_df):
+</span></span><span style="display:flex;"><span>    total_qty_shipped <span style="color:#f92672">=</span> order_lines_df[<span style="color:#e6db74">&#39;delivery_qty&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    total_qty_ordered <span style="color:#f92672">=</span> order_lines_df[<span style="color:#e6db74">&#39;order_qty&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> total_qty_ordered <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (total_qty_shipped <span style="color:#f92672">/</span> total_qty_ordered) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Total Orders</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_orders</span>(orders_aggregate_df):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> len(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. On Time Delivery % (OT %)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_time_delivery_rate</span>(orders_aggregate_df):
+</span></span><span style="display:flex;"><span>    on_time_orders <span style="color:#f92672">=</span> orders_aggregate_df[<span style="color:#e6db74">&#39;on_time&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    total_orders_count <span style="color:#f92672">=</span> total_orders(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> total_orders_count <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (on_time_orders <span style="color:#f92672">/</span> total_orders_count) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. In Full Delivery % (IF %)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">in_full_delivery_rate</span>(orders_aggregate_df):
+</span></span><span style="display:flex;"><span>    in_full_orders <span style="color:#f92672">=</span> orders_aggregate_df[<span style="color:#e6db74">&#39;in_full&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    total_orders_count <span style="color:#f92672">=</span> total_orders(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> total_orders_count <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (in_full_orders <span style="color:#f92672">/</span> total_orders_count) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 7. On Time In Full % (OTIF %)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_time_in_full_rate</span>(orders_aggregate_df):
+</span></span><span style="display:flex;"><span>    otif_orders <span style="color:#f92672">=</span> orders_aggregate_df[<span style="color:#e6db74">&#39;otif&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    total_orders_count <span style="color:#f92672">=</span> total_orders(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> total_orders_count <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (otif_orders <span style="color:#f92672">/</span> total_orders_count) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 8. On Time Target</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">avg_on_time_target</span>(target_orders_df):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> target_orders_df[<span style="color:#e6db74">&#39;ontime_target%&#39;</span>]<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 9. In Full Target</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">avg_in_full_target</span>(target_orders_df):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> target_orders_df[<span style="color:#e6db74">&#39;infull_target%&#39;</span>]<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 10. On Time In Full Target</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">avg_otif_target</span>(target_orders_df):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> target_orders_df[<span style="color:#e6db74">&#39;otif_target%&#39;</span>]<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage:</span>
+</span></span><span style="display:flex;"><span>total_order_lines_count <span style="color:#f92672">=</span> total_order_lines(order_lines_df)
+</span></span><span style="display:flex;"><span>line_fill_rate_percent <span style="color:#f92672">=</span> line_fill_rate(order_lines_df)
+</span></span><span style="display:flex;"><span>volume_fill_rate_percent <span style="color:#f92672">=</span> volume_fill_rate(order_lines_df)
+</span></span><span style="display:flex;"><span>total_orders_count <span style="color:#f92672">=</span> total_orders(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>on_time_delivery_percent <span style="color:#f92672">=</span> on_time_delivery_rate(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>in_full_delivery_percent <span style="color:#f92672">=</span> in_full_delivery_rate(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>on_time_in_full_percent <span style="color:#f92672">=</span> on_time_in_full_rate(orders_aggregate_df)
+</span></span><span style="display:flex;"><span>avg_on_time_target_value <span style="color:#f92672">=</span> avg_on_time_target(target_orders_df)
+</span></span><span style="display:flex;"><span>avg_in_full_target_value <span style="color:#f92672">=</span> avg_in_full_target(target_orders_df)
+</span></span><span style="display:flex;"><span>avg_otif_target_value <span style="color:#f92672">=</span> avg_otif_target(target_orders_df)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total Order Lines:&#34;</span>, total_order_lines_count)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Line Fill Rate (LIFR %):&#34;</span>, line_fill_rate_percent)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Volume Fill Rate (VOFR %):&#34;</span>, volume_fill_rate_percent)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total Orders:&#34;</span>, total_orders_count)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;On Time Delivery % (OT %):&#34;</span>, on_time_delivery_percent)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;In Full Delivery % (IF %):&#34;</span>, in_full_delivery_percent)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;On Time In Full % (OTIF %):&#34;</span>, on_time_in_full_percent)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;On Time Target:&#34;</span>, avg_on_time_target_value)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;In Full Target:&#34;</span>, avg_in_full_target_value)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;On Time In Full Target:&#34;</span>, avg_otif_target_value)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Total Order Lines: 57096
+</span></span><span style="display:flex;"><span>Line Fill Rate (LIFR %): 65.96083788706738
+</span></span><span style="display:flex;"><span>Volume Fill Rate (VOFR %): 96.59059222446581
+</span></span><span style="display:flex;"><span>Total Orders: 31729
+</span></span><span style="display:flex;"><span>On Time Delivery % (OT %): 59.03117022282455
+</span></span><span style="display:flex;"><span>In Full Delivery % (IF %): 52.78136720350468
+</span></span><span style="display:flex;"><span>On Time In Full % (OTIF %): 29.020769642913425
+</span></span><span style="display:flex;"><span>On Time Target: 86.08571428571429
+</span></span><span style="display:flex;"><span>In Full Target: 76.51428571428572
+</span></span><span style="display:flex;"><span>On Time In Full Target: 65.91428571428571
+</span></span></code></pre></div><h3 id="dashboard-components-assembling-the-puzzle">Dashboard Components: Assembling the Puzzle</h3>
+<p>Your dashboard should encompass diverse components that collectively paint a vivid picture of supply chain performance. These components may include:</p>
+<h4 id="order-overview">Order Overview:</h4>
+<p>Summarizing total orders, on-time delivery rates, and in-full delivery rates.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_orders_analysis</span>(df):
+</span></span><span style="display:flex;"><span>    total_orders <span style="color:#f92672">=</span> len(df)
+</span></span><span style="display:flex;"><span>    total_delivered <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;In Full&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    total_on_time <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;On Time&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>    avg_delivery_qty <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;delivery_qty&#39;</span>]<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Total Orders&#39;</span>: total_orders,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Total Delivered&#39;</span>: total_delivered,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Total On Time&#39;</span>: total_on_time,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Avg Delivery Quantity&#39;</span>: avg_delivery_qty
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>total_orders_analysis(order_lines_df)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{&#39;Total Orders&#39;: 57096,
+</span></span><span style="display:flex;"><span> &#39;Total Delivered&#39;: 37661,
+</span></span><span style="display:flex;"><span> &#39;Total On Time&#39;: 40605,
+</span></span><span style="display:flex;"><span> &#39;Avg Delivery Quantity&#39;: 227.14650763626173}
+</span></span></code></pre></div><h4 id="customer-insights">Customer Insights:</h4>
+<p>Unveiling customer distribution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Function to visualize the count of customers in each city</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_city_counts</span>(data_frame):
+</span></span><span style="display:flex;"><span>    city_counts <span style="color:#f92672">=</span> data_frame[<span style="color:#e6db74">&#39;city&#39;</span>]<span style="color:#f92672">.</span>value_counts()
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>bar(city_counts<span style="color:#f92672">.</span>index, city_counts<span style="color:#f92672">.</span>values, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;skyblue&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;City&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Number of Customers&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Customer Counts by City&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><h4 id="delivery-metrics">Delivery Metrics:</h4>
+<p>Visualizing delivery performance metrics such as on-time and in-full delivery percentages.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_metrics_and_plot</span>(data_frames):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate Total Orders</span>
+</span></span><span style="display:flex;"><span>    total_orders <span style="color:#f92672">=</span> orders_aggregate_df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate On Time Delivery %</span>
+</span></span><span style="display:flex;"><span>    on_time_delivery_percentage <span style="color:#f92672">=</span> (orders_aggregate_df[<span style="color:#e6db74">&#39;on_time&#39;</span>]<span style="color:#f92672">.</span>sum() <span style="color:#f92672">/</span> total_orders) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate In Full Delivery %</span>
+</span></span><span style="display:flex;"><span>    in_full_delivery_percentage <span style="color:#f92672">=</span> (orders_aggregate_df[<span style="color:#e6db74">&#39;in_full&#39;</span>]<span style="color:#f92672">.</span>sum() <span style="color:#f92672">/</span> total_orders) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate On Time In Full %</span>
+</span></span><span style="display:flex;"><span>    otif_delivery_percentage <span style="color:#f92672">=</span> (orders_aggregate_df[<span style="color:#e6db74">&#39;otif&#39;</span>]<span style="color:#f92672">.</span>sum() <span style="color:#f92672">/</span> total_orders) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Create a time-based index from date_df</span>
+</span></span><span style="display:flex;"><span>    date_df[<span style="color:#e6db74">&#39;date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(date_df[<span style="color:#e6db74">&#39;mmm_yy&#39;</span>])  <span style="color:#75715e"># Correct the column name</span>
+</span></span><span style="display:flex;"><span>    date_df<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;date&#39;</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Aggregate delivery metrics by date</span>
+</span></span><span style="display:flex;"><span>    aggregated_metrics <span style="color:#f92672">=</span> orders_aggregate_df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;order_placement_date&#39;</span>)<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Plot On Time Delivery %, In Full Delivery %, and On Time In Full % over time</span>
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>plot(aggregated_metrics<span style="color:#f92672">.</span>index, aggregated_metrics[<span style="color:#e6db74">&#39;on_time&#39;</span>], label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;On Time Delivery %&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>plot(aggregated_metrics<span style="color:#f92672">.</span>index, aggregated_metrics[<span style="color:#e6db74">&#39;in_full&#39;</span>], label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;In Full Delivery %&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>plot(aggregated_metrics<span style="color:#f92672">.</span>index, aggregated_metrics[<span style="color:#e6db74">&#39;otif&#39;</span>], label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;On Time In Full %&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Date&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Percentage&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Delivery Metrics Over Time&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>show()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call the function with your data frames</span>
+</span></span><span style="display:flex;"><span>data_frames <span style="color:#f92672">=</span> [ date_df, products_df,  order_lines_df, orders_aggregate_df]
+</span></span><span style="display:flex;"><span>calculate_metrics_and_plot(data_frames)
+</span></span></code></pre></div><p>These are some of the possible Visualizations and KPIs to start with. You can find an in depth analysis in the github repo:
+<br>
+<a href="https://github.com/mehdy28/Supply_Chain_Desktop_App_1">https://github.com/mehdy28/Supply_Chain_Desktop_App_1</a></p>
+<h3 id="data-visualization-tools-bringing-data-to-life">Data Visualization Tools: Bringing Data to Life</h3>
+<p>To craft an engaging dashboard, leverage data visualization tools like Matplotlib and Seaborn. These tools empower you to create visually appealing charts and graphs that effectively communicate crucial insights. Thoughtful selection of chart types, colors, and labels ensures your dashboard strikes the perfect balance between information and aesthetics.</p>
+<h3 id="user-interactivity-enhancing-user-experience">User Interactivity: Enhancing User Experience</h3>
+<p>Interactivity is the lifeblood of any effective dashboard. Implement features enabling users to filter and drill down into specific data points. Users should seamlessly select date ranges or customer segments to access pertinent insights. User-friendly interactivity elevates your dashboard&rsquo;s usability and value.</p>
+<h2 id="conclusion-paving-the-path-to-supply-chain-excellence">Conclusion: Paving the Path to Supply Chain Excellence</h2>
+<p>In this inaugural part of our series, we&rsquo;ve embarked on a journey to elevate your supply chain management project. The fusion of data analysis, visualization, and dashboard creation is setting the stage for a groundbreaking app. Remember, this is just the beginning – the next article will delve into the creation of a robust database to store your valuable data. By mastering these foundational aspects, you&rsquo;re on track to craft a supply chain app that optimizes logistics, empowers decision-makers, and propels businesses towards excellence.
+<br>
+Stay tuned for <strong>Part 2</strong>, where we&rsquo;ll guide you through the intricate process of database development. Your dream of creating a transformative supply chain management app is well within reach. Keep the momentum going, and let&rsquo;s collectively shape the future of logistics and operations!
+<br>
+<br>
+<br>
+<strong>Disclaimer:</strong> The code snippets provided are illustrative examples. Actual implementation may vary based on your specific requirements and programming environment.</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#setting-the-foundation-for-your-supply-chain-app">Setting the Foundation for Your Supply Chain App</a></li>
+    <li><a href="#understanding-the-data-navigating-your-dataset">Understanding the Data: Navigating Your Dataset</a></li>
+    <li><a href="#cleaning-and-preprocessing-a-prerequisite-for-analysis">Cleaning and Preprocessing: A Prerequisite for Analysis</a></li>
+    <li><a href="#visualizing-product-categories-unveiling-insights">Visualizing Product Categories: Unveiling Insights</a></li>
+    <li><a href="#uncovering-key-insights-embarking-on-exploratory-data-analysis">Uncovering Key Insights: Embarking on Exploratory Data Analysis</a>
+      <ul>
+        <li><a href="#customer-analysis-deciphering-customer-behavior">Customer Analysis: Deciphering Customer Behavior</a></li>
+        <li><a href="#product-analysis-spotting-high-performers">Product Analysis: Spotting High Performers</a></li>
+        <li><a href="#delivery-performance-tracking-punctuality-and-precision">Delivery Performance: Tracking Punctuality and Precision</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-your-dashboard-from-insights-to-action">Building Your Dashboard: From Insights to Action</a>
+      <ul>
+        <li><a href="#dashboard-components-assembling-the-puzzle">Dashboard Components: Assembling the Puzzle</a></li>
+        <li><a href="#data-visualization-tools-bringing-data-to-life">Data Visualization Tools: Bringing Data to Life</a></li>
+        <li><a href="#user-interactivity-enhancing-user-experience">User Interactivity: Enhancing User Experience</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion-paving-the-path-to-supply-chain-excellence">Conclusion: Paving the Path to Supply Chain Excellence</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/supply-chain" target="_blank">Supply Chain</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/data-analysis" target="_blank">Data Analysis</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/logistics-optimization" target="_blank">Logistics Optimization</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/dashboard-creation" target="_blank">Dashboard Creation</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/business-intelligence" target="_blank">Business Intelligence</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/data-visualization" target="_blank">Data Visualization</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/desktop-app" target="_blank">Desktop App</a></li>
+              
+              <li class="list-inline-item"><a href="https://mehdy28.github.io/mehdy_profile/tags/supply-chain-app" target="_blank">Supply Chain App</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Supply%20Chain%20Management%20APP%3a%20Part%201&url=https%3a%2f%2fmehdy28.github.io%2fmehdy_profile%2fblogs%2fsupply_chain_desktop_app_1%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Supply%20Chain%20Management%20APP%3a%20Part%201: https%3a%2f%2fmehdy28.github.io%2fmehdy_profile%2fblogs%2fsupply_chain_desktop_app_1%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Supply%20Chain%20Management%20APP%3a%20Part%201&amp;body=Check%20out%20this%20site https%3a%2f%2fmehdy28.github.io%2fmehdy_profile%2fblogs%2fsupply_chain_desktop_app_1%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="https://mehdy28.github.io/mehdy_profile/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+<script src="https://mehdy28.github.io/mehdy_profile/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    <div class="container py-3" id="recent-posts">
+    
+    
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/SQL_Pr1/cover.png" class="card-img-top" alt="Exploring Telangana&#39;s District Data: A SQL Analysis">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Exploring Telangana&#39;s District Data: A SQL Analysis">Exploring Telangana&#39;s …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>In this project , we delve into the world of data and databases to analyze various aspects of Telangana&rsquo;s districts. Our dataset comprises information from multiple tables related to revenue, vehicle sales, and industrial sectors in Telangana. We will conduct SQL queries to extract meaningful …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_3/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr2/Cover.png" class="card-img-top" alt="Freight and Logistics Analytics: Empowering Decisions with Power BI">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Freight and Logistics Analytics: Empowering Decisions with Power BI">Freight and Logistics …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>In a rapidly evolving world driven by data, the ability to transform intricate datasets into meaningful insights is a skill in high demand. This article introduces a Power BI project that offers a comprehensive exploration of data analytics, highlighting not only the capabilities of Power BI but …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_2/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Power_Bi_Pr1/Cover.png" class="card-img-top" alt="Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Power BI Dashboard: Analyzing Sales, Returns, and Customer Performance">Power BI Dashboard: …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>In an increasingly data-driven world, the ability to analyze and visualize complex datasets is a skill of great value. In this article, I present my Power BI project, which focuses on analyzing sales performance, returns, and customer behavior. This project not only demonstrates my proficiency in …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/powerbi_project_1/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Supply_Chain_Management_APP_Part%20_2/Data_Base.png" class="card-img-top" alt="Supply Chain Management APP: Part 2">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Supply Chain Management APP: Part 2">Supply Chain Management …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Welcome to Part 2 of our comprehensive series on creating a powerful Supply Chain Management App! In this exciting installment of our series, we continue our journey into the dynamic world of supply chain optimization. In Part 1, we delved into the realm of data analysis and dashboard creation, …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 12, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Supply_Chain_Management_APP_Part%20_1/Supply_Chain.png" class="card-img-top" alt="Supply Chain Management APP: Part 1">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Supply Chain Management APP: Part 1">Supply Chain Management …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Introduction Welcome to the first part of our comprehensive series on creating a powerful Supply Chain Management App! In this article, we will dive into the exciting world of data analysis and dashboard creation, setting the stage for an app that will enhance the supply chain optimization. As a …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 10, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_1/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/review_classification/">
+                        <img src="https://mehdy28.github.io/mehdy_profile/images/Blogs/Review_Classification/Classif.png" class="card-img-top" alt="Review Classification">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/review_classification/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Review Classification">Review Classification</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Introduction Lights, camera, sentiment analysis! In this captivating project, we&rsquo;re diving into the world of movies and emotions, exploring how machine learning techniques can help us decipher the sentiment hidden within movie reviews. So grab your popcorn, and let&rsquo;s embark on a journey …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 4, 2023</span>
+                    <a href="https://mehdy28.github.io/mehdy_profile/blogs/review_classification/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div><div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/mehdy28" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/mehdi-bhiri-20096a257/" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+    <a href="https://www.facebook.com/profile.php?id=100001214131066" aria-label="facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+            <path fill="#3F51B5"
+                d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+            <path fill="#FFF"
+                d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z" />
+        </svg>
+    </a>
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <div class="pb-2">
+                <a href="https://mehdy28.github.io/mehdy_profile/" title="Mehdi">
+                    <img alt="Footer logo" src="https://mehdy28.github.io/mehdy_profile/DemHigh.png"
+                        height="40px" width="40px">
+                </a>
+            </div>
+            &copy; 2023  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div></footer><script src="https://mehdy28.github.io/mehdy_profile/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="https://mehdy28.github.io/mehdy_profile/js/search.js"></script>
+
+
+
+
+
+
+
+
+<script src="https://mehdy28.github.io/mehdy_profile/js/contact.js"></script>
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

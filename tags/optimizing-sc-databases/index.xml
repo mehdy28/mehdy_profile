@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optimizing SC Databases on Mehdi</title>
+    <link>https://mehdy28.github.io/mehdy_profile/tags/optimizing-sc-databases/</link>
+    <description>Recent content in Optimizing SC Databases on Mehdi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Aug 2023 23:29:21 +0530</lastBuildDate><atom:link href="https://mehdy28.github.io/mehdy_profile/tags/optimizing-sc-databases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Supply Chain Management APP: Part 2</title>
+      <link>https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/</link>
+      <pubDate>Sat, 12 Aug 2023 23:29:21 +0530</pubDate>
+      
+      <guid>https://mehdy28.github.io/mehdy_profile/blogs/supply_chain_desktop_app_2/</guid>
+      <description>Welcome to Part 2 of our comprehensive series on creating a powerful Supply Chain Management App! In this exciting installment of our series, we continue our journey into the dynamic world of supply chain optimization. In Part 1, we delved into the realm of data analysis and dashboard creation, laying the groundwork for a robust and efficient supply chain management app. Now, in Part 2, we shift our focus to the critical aspect of database development.</description>
+    </item>
+    
+  </channel>
+</rss>
